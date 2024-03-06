@@ -8,13 +8,13 @@ interface ProductData {
     productStock: number;
     // Add other properties if needed
 }
-
 // Define the props interface for ProductSingleCard
 interface ProductSingleCardProps {
     product: ProductData;
+    userId: string;
 }
 
-function ProductSingleCard({ product }: ProductSingleCardProps) {
+function ProductSingleCard({ product, userId }: ProductSingleCardProps) {
 
     const [amount, setAmount] = useState(1);
 
@@ -35,7 +35,7 @@ function ProductSingleCard({ product }: ProductSingleCardProps) {
     const handleBuy = async () => {
         try {
             const response = await axios.post('http://localhost:8888/buyProduct', {
-                _id: '65e590b44aed1984514a635c',
+                _id: userId,
                 productId: product.productId,
                 quantity: amount
             });

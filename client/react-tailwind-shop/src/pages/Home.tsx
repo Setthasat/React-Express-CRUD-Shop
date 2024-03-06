@@ -40,9 +40,9 @@ function Home() {
     }, []);
 
     return (
-        <div className='from-white bg-gradient-to-bl to-violet-900 h-screen flex justify-center items-center gap-[5rem]'>
+        <div className='from-pink-600 bg-gradient-to-bl to-violet-900 h-screen flex justify-center items-center gap-[5rem]'>
             <UserIndexCard userData={userData} />
-            <ProductIndexCard productData={productData} />
+            <ProductIndexCard productData={productData} userId={userId} />
         </div>
     );
 }

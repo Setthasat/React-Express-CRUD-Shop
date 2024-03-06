@@ -9,11 +9,14 @@ interface ProductData {
     data: any; // Assuming 'data' contains an array
 }
 
+
+
 interface ProductIndexCardProps {
     productData: ProductData;
+    userId: string;
 }
 
-function ProductIndexCard({ productData }: ProductIndexCardProps) {
+function ProductIndexCard({ productData, userId }: ProductIndexCardProps) {
     // Assuming productData.data is an array, you can map over it
     const { data } = productData;
 
@@ -24,6 +27,7 @@ function ProductIndexCard({ productData }: ProductIndexCardProps) {
                     <ProductSingleCard
                         key={product.productId}
                         product={product}
+                        userId={userId}
                     />
                 ))
             ) : (
