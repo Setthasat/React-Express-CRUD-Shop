@@ -31,7 +31,7 @@ function ProductIndexCard({ productData, userId }: ProductIndexCardProps) {
                     />
                 ))
             ) : (
-                <p>No products available</p>
+                <p className="flex justify-center w-[35rem] text-white text-[2rem] items-center">No products available</p>
             )}
         </div>
     );
